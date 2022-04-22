@@ -36,8 +36,27 @@ const fetchCoordsByIP = (ip, callback) => {
 };
 
 const nextISSTimesForMyLocation = (callback) => {
+  fetchMyIP((error, ip) => {
+    if (error) {
+      console.log("It didn't work!", error);
+      return;
+    }
 
-}
+    console.log('It worked! Returned IP: ', ip);
+    const ipOut = ip
+    
+    fetchCoordsByIP(ipOut, (error, coord) => {
+      if (error) {
+        console.log("It didn't work! ", error);
+        return;
+      }
+
+      const coordinates = coord;
+      console.log(coordinates);
+    });
+  });
+
+};
 module.exports = {
   fetchMyIP,
   fetchCoordsByIP,
