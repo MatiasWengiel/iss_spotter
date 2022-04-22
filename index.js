@@ -8,8 +8,8 @@ nextISSTimesForMyLocation((error, passTimes) => {
     return console.log("It didn't work!", error);
   }
 
-  console.log(passTimes);
-});
+  console.log(passTimes)
+})
 // fetchCoordsByIP('24.76.174.146', (error, coord) => {
 //   if (error) {
 //     console.log("It didn't work! ", error);
